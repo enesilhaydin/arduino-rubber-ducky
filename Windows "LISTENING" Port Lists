@@ -1,0 +1,46 @@
+#include "Keyboard.h"
+
+void typeKey(uint8_t key)
+{
+  Keyboard.press(key);
+  delay(50);
+  Keyboard.release(key);
+}
+
+void setup()
+{
+  // Begining the Keyboard stream
+  Keyboard.begin();
+
+  delay(500);
+
+  delay(3000);
+
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press('r');
+  Keyboard.releaseAll();
+
+  delay(500);
+
+  Keyboard.print("cmd");
+
+  delay(500);
+
+  typeKey(KEY_RETURN);
+
+  delay(750);
+
+  Keyboard.print("netstat =an ");
+  delay(100);
+  Keyboard.press(KEY_RIGHT_ALT);
+  Keyboard.press('ö');
+  Keyboard.releaseAll();
+  delay(500);
+  Keyboard.print(" f'nd &' `LISTENING`");
+ 
+  typeKey(KEY_RETURN);
+
+  Keyboard.end();
+}
+
+void loop() {}
