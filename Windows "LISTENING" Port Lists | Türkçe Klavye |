@@ -9,7 +9,7 @@ void typeKey(uint8_t key)
 
 void setup()
 {
-  // Begining the Keyboard stream
+
   Keyboard.begin();
 
   delay(500);
